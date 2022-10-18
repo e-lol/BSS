@@ -1,7 +1,7 @@
 repeat wait(0.1) until game:IsLoaded()
 
 hives = game.Workspace.Honeycombs:GetChildren() for i = #hives, 1, -1 do  v = game.Workspace.Honeycombs:GetChildren()[i] if v.Owner.Value == nil then game.ReplicatedStorage.Events.ClaimHive:FireServer(v.HiveID.Value) end end
-
+wait(1)
 -- screen cover
 
 local HttpService = game:GetService("HttpService")
