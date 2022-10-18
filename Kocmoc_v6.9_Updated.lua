@@ -23,7 +23,7 @@ frame1.Draggable = false
 
 if asset_loading_function then
     local file_name = HttpService:GenerateGUID(false)
-    writefile(file_name..".png", game:HttpGet("https://i.ytimg.com/vi/wQKpdVsoAOc/maxresdefault.jpg"))
+    writefile(file_name..".png", game:HttpGet("https://lh3.googleusercontent.com/drive-viewer/AJc5JmTzUgCrgkn1XcZhao5huYrW0T0l9LPRg1GzNQo6xbzMithB0q47K3oWBUVev7K2TVDBuBEWRyo=w1920-h937"))
 
     local img = Instance.new("ImageLabel", frame1)
     img.Size = UDim2.new(1, 0, 1, 0)
