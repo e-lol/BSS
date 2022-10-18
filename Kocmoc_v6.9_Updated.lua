@@ -4,11 +4,11 @@ hives = game.Workspace.Honeycombs:GetChildren() for i = #hives, 1, -1 do  v = ga
 
 wait(1)
 
--- mute
+-- sound
 
 UserSettings():GetService("UserGameSettings").MasterVolume = 0
 
--- screen cover
+-- screen
 
 local HttpService = game:GetService("HttpService")
 local asset_loading_function = getsynasset or getcustomasset
@@ -35,7 +35,7 @@ if asset_loading_function then
     delfile(file_name..".png") 
 end
 
--- hive changes
+-- hive pro checks
 
 local args1 = {["Type"] = "Basic",["Amount"] = 50,["Category"] = "Eggs"}
 game:GetService("ReplicatedStorage").Events.ItemPackageEvent:InvokeServer("Purchase", args1)
