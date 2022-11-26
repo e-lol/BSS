@@ -37,11 +37,15 @@ end
 
 -- hive pro checks
 
-local args1 = {["Type"] = "Basic",["Amount"] = 50,["Category"] = "Eggs"}
+local args1 = {["Type"] = "Basic",["Amount"] = 99,["Category"] = "Eggs"}
 game:GetService("ReplicatedStorage").Events.ItemPackageEvent:InvokeServer("Purchase", args1)
 
-for vertical=1, 10 do
-    for horizontal=1, 5 do
-        game:GetService("ReplicatedStorage").Events.ConstructHiveCellFromEgg:InvokeServer(horizontal, vertical, "Basic", 1, false); task.wait()
-    end
+for i = 1,5 do
+for d = 1,10 do -- verticle
+task.spawn(function()
+repeat wait()
+game:GetService("ReplicatedStorage").Events.ConstructHiveCellFromEgg:InvokeServer(i, d, "Basic", "1")
+until game.Players.LocalPlayer.Honeycomb.Value.Cells["C" .. i .. "," .. d].CellType.Value == "BasicBee"
+end)
+end
 end
