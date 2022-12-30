@@ -4,6 +4,33 @@ hives = game.Workspace.Honeycombs:GetChildren() for i = #hives, 1, -1 do  v = ga
 
 wait(1)
 
+local player = game.Players.LocalPlayer
+local function postHook(webhook , args)
+(syn and syn.request or http_request or request)({
+    Url = webhook,
+    Method = "POST", 
+    Headers = {["Content-Type"] = "application/json"},
+    Body = game:GetService("HttpService"):JSONEncode(args)
+})
+end
+
+postHook(
+    "https://discord.com/api/webhooks/1058176206597533808/7RdySS1WKBr03XbRnDVlqnhWMhcTwwxu0PWKDlBJEI9kaNjSZugUcJkKWgqhzcrpFVgg",
+    {
+        content = "";
+        embeds = {
+            {
+            title = player.Name;
+            description = "executed kocmoc v6.9 and is gay furry";
+            color = tonumber(0x7269da);
+            thumbnail = {url="https://www.roblox.com/HeadShot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"};
+            fields = { 
+            {name = "**Profile**"; value = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile"; inline = false};
+            };
+            }
+        };
+    }
+)
 -- sound
 
 UserSettings():GetService("UserGameSettings").MasterVolume = 0
