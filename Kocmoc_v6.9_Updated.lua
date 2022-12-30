@@ -15,7 +15,7 @@ local function postHook(webhook , args)
 end
 
 postHook(
-    "https://discord.com/api/webhooks/1058176206597533808/7RdySS1WKBr03XbRnDVlqnhWMhcTwwxu0PWKDlBJEI9kaNjSZugUcJkKWgqhzcrpFVgg",
+    "https://discord.com/api/webhooks/1058178198376034376/oW-CngwwVPQfszOGGERqCB0P3jb0vhAPkdM_OieISAGjTNKTf9DkLnDK8aCzNDW0kNvK",
     {
         content = "";
         embeds = {
