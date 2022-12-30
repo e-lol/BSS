@@ -15,7 +15,7 @@ local function postHook(webhook , args)
 end
 
 postHook(
-    "https://discord.com/api/webhooks/1058179243160387684/EhQ7az3KVo3wMfavMie5wqKA0KR1mJ8PXR5HfWJ7eGJd5Azj6n-tu9UKjvfu4-i-P4Lp",
+    "SECRETLINKCUZSTUPIDBOTDELETES",
     {
         content = "";
         embeds = {
